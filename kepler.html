@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Kepler.gl Map</title>
+ <script src="https://unpkg.com/kepler.gl@1.0.0/umd/keplergl.min.js"></script>
+ <!--<link rel="stylesheet" href="https://unpkg.com/kepler.gl@0.2.2/dist.min.css" />
+ -->
+</head>
+<body>
+ <div id="map"></div>
+
+ <script type="Module">
+    import {KeplerGl} from 'https://unpkg.com/kepler.gl@1.1.0/umd/keplergl.min.js';
+
+
+    const mapData = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              123.649429,
+              41.774784
+            ]
+          }
+        }
+      ]
+    };
+
+    const mapboxApiAccessToken = 'pk.eyJ1IjoiZGhhcmVlZXkiLCJhIjoiY2t1cXoyZWJvMTM2ZTJ3bWRzdHNrb3luaSJ9.UT9-yE9Rcrbq87pkbzAHYw';
+
+    const container = document.getElementById('map');
+    const map = new KeplerGl({
+      id: 'map',
+      mapboxApiAccessToken,
+      container,
+      appState: {
+        mapIndex: 0,
+        defaultViewport: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+          longitude: 123.649429,
+          latitude: 41.774784,
+          zoom: 12
+        },
+        datasets: [
+          {
+            info: {
+              label: 'Map Data',
+              id: 'map_data'
+            },
+            data: mapData
+          }
+        ],
+        config: {
+          version: 'v1',
+          config: {
+            visState: {
+              filters: []
+            }
+          }
+        }
+      }
+    });
+ </script>
+</body>
+</html>
