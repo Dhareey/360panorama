@@ -21,14 +21,48 @@
 			width: 98%;
 			height: 98vh;
 		}
+
+		#controls {
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			text-align: center;
+			width: 100%;
+			padding-bottom: 3px;
+		}
+
+		.ctrl {
+			padding: 8px 5px;
+			width: 30px;
+			text-align: center;
+			background: rgba(200, 200, 200, 0.8);
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.ctrl:hover {
+			background: rgba(200, 200, 200, 1);
+		}
 	</style>
 </head>
 
 <body>
 
 
-	<div id="panorama"></div>
+	<div id="panorama">
+		<div id="controls">
+			<div class="ctrl" id="pan-up">&#9650;</div>
+			<div class="ctrl" id="pan-down">&#9660;</div>
+			<div class="ctrl" id="pan-left">&#9664;</div>
+			<div class="ctrl" id="pan-right">&#9654;</div>
+			<div class="ctrl" id="zoom-in">&plus;</div>
+			<div class="ctrl" id="zoom-out">&minus;</div>
+			<div class="ctrl" id="fullscreen">&#x2922;</div>
+		</div>
+
+	</div>
 	<script src="scripts/pan.js"></script>
+	<script src="scripts/controls.js"></script>
 
 
 </body>
