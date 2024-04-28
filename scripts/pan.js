@@ -11,7 +11,7 @@ viewer = pannellum.viewer('panorama', {
             "title": "Entrance staircase",
             "hfov": 300,
             "type": "equirectangular",
-            "panorama": "scripts/outside_entrance_hdr.jpg",
+            "panorama": '../images/outside_stairs.jpg',
             "showControls": false,
             "hotSpots": [
                 {
@@ -26,16 +26,36 @@ viewer = pannellum.viewer('panorama', {
 
         "entranceDoor": {
             'title': 'Entrance Landing',
-            "hfov": 300,
+            "hfov": 3000,
             'type': "equirectangular",
-            "panorama": 'scripts/entrance_door_hdr.jpg',
+            "panorama": '../images/entrance_door_hdr.jpg',
+            "showControls": false,
             "hotSpots": [
                 {
-                    "pitch": -2.1,
-                    "yaw": 132.9,
+                    "pitch": -15,
+                    "yaw": -10,
                     "type": "scene",
-                    "text": "Entrance Landing",
+                    "text": "Reception",
+                    "sceneId": "reception"
+                },
+                {
+                    "pitch": -40,
+                    "yaw": -88,
+                    "type": "scene",
+                    "text": "Entrance Staircase",
                     "sceneId": "entranceStairs"
+                }
+            ]
+        },
+        "reception": {
+            'title': 'Reception Desk',
+            "type": "equirectangular",
+            'hfov': 300,
+            "panorama": '../images/reception.jpg',
+            'showControls': false,
+            "hotSpots": [
+                {
+                    "pitch": 0
                 }
             ]
         }
