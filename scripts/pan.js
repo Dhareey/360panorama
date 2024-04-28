@@ -11,7 +11,7 @@ viewer = pannellum.viewer('panorama', {
             "title": "Entrance staircase",
             "hfov": 300,
             "type": "equirectangular",
-            "panorama": '../images/outside_stairs.jpg',
+            "panorama": '360panorama/images/outside_stairs.jpg',
             "showControls": false,
             "hotSpots": [
                 {
